@@ -194,7 +194,8 @@ public class MainController {
 			
 //			ServiceInstance instance = this.service.createServiceInstance(request.withServiceDefinition(svc).and().withServiceInstanceId(serviceInstanceId));
 			logger.debug("ServiceInstance Created: " + instance.getServiceInstanceId());
-			return new ResponseEntity(new CreateServiceInstanceResponse(instance), instance.getHttpStatus());     
+//			return new ResponseEntity(new CreateServiceInstanceResponse(instance.withDashboardUrl("http::/vpn.xip.kr/dashboard_url/"+instance.getServiceInstanceId())), instance.getHttpStatus());     
+			return new ResponseEntity(new CreateServiceInstanceResponse(instance.withDashboardUrl("/dashboard")), instance.getHttpStatus());     
 		} 
 	} 
 	
